@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    background-color: #864199;
+    transition: background 0.5s ease;
+    position: relative;
+}
+
+.name-container,
+.email-container,
+.password-container,
+.final-container {
+    /*Instead of using justify and align in the bady, we uso abolute 
+    it is to change the opacity and make more pretty transitionable*/
+    position:absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    height: 50px;
+    width: 350px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    /*Transition for fading in and fading out*/
+    transition: all 0.5s ease;
+}
+
+.name-container i,
+.email-container i,
+.password-container i,
+.final-container i {
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* This will make the trasitions */
+div.innactive {
+    opacity: 0; /* It is just invisible  */
+    pointer-events: none; /* Makes it non clickable when not active */
+    transform: translate(-50%, 50%); /* When innactive, it is down, when turned to active it 
+    goes up and appear, turning, div.active */
+}
+
+div.active{
+    opacity: 1; /* Turns visible */
+    pointer-events: all; /* Turns clickable */
+    transform: translate(-50%, -50%); /* Original position, middle of the screen */
+}
+
+input{
+    flex: 1;
+    margin-right: 15px;
+    outline: none;
+    border: none;
+    height: 100%;
+}
+
